@@ -7,5 +7,11 @@ public class Gems : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         PlayerInventory playerInventory = other.GetComponent<PlayerInventory>();
+
+        if(playerInventory != null)
+        {
+            playerInventory.GemCollected();
+            gameObject.SetActive(false);
+        }
     }
 }
